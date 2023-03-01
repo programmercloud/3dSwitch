@@ -1,0 +1,168 @@
+/* Set the body element to be 100% width and 100 viewport height,
+align content to center both horizontally and vertically,
+set text alignment to center and hide any overflowing content */
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Create a container with specified dimensions,
+  rounded corners, margin, background color, background gradient,
+  box shadow, and transparent border */
+.container {
+  height: 350px;
+  width: 330px;
+  border-radius: 90px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: #fafbfb;
+  background-image: linear-gradient(top, #fafbfb 0%, #ecf9f4 100%);
+  box-shadow: 0px 11px 39px -3px rgba(105, 104, 105, 1),
+    inset 0px -6px 3px #ccd6dc;
+  border: solid 1px transparent;
+}
+
+/* Set paragraph elements to a specific color,
+  text shadow, font size, and font weight */
+p {
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+/* Create a button with specified dimensions, margins,
+  borders, border radius, background gradient, box shadow,
+  and overflow hidden */
+.btn-bg {
+  position: relative;
+  z-index: 1;
+  width: 160px;
+  height: 80px;
+  margin: 0 auto;
+  border-top: 1px solid #f8fafb;
+  border-bottom: 1px solid #fff;
+  border-radius: 60px;
+  background: #ccc;
+  background: #f8fafb;
+  background: linear-gradient(to bottom, #f8fafb 15%, #f8fafb 100%);
+  box-shadow: inset -1px 47px 78px -18px rgba(179, 177, 179, 1);
+  overflow: hidden;
+}
+
+/* Create an inner button with specified dimensions,
+  position, borders, border radius, background gradient,
+  box shadow, and transition on hover */
+.btn-in {
+  position: relative;
+  top: 11px;
+  left: 15px;
+  width: 130px;
+  height: 55px;
+  border-left: 1px solid #b4b4b4;
+  border-top: 1px solid #919191;
+  border-bottom: 1px solid #919191;
+  border-right: 1px solid #919191;
+  border-radius: 60px;
+  background: #f8fafb;
+  background: linear-gradient(to right, #f8fafb 30%, #f8fafb 100%);
+  box-shadow: inset -2px 0px 8px rgba(126, 126, 126, 0.6),
+    inset 2px 1px 1px rgba(255, 255, 255, 0.5);
+  transition: all 0.2s linear;
+}
+
+/* Styles for button before and after elements */
+.btn-in:before,
+.btn-in:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 25px;
+  left: 10px;
+  width: 75px;
+  height: 35px;
+  box-shadow: 0 15px 18px rgba(0, 0, 0, 0.9);
+  border-radius: 60px;
+  transform: skew(-21deg) rotate(-12deg);
+  transition: all 0.2s linear;
+}
+
+/* Styles for button before and after elements when input is checked */
+input:checked ~ .btn-in:before,
+input:checked ~ .btn-in:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 27px;
+  left: 48px;
+  width: 75px;
+  height: 35px;
+  box-shadow: 0 15px 18px rgba(0, 0, 0, 0.9);
+  border-radius: 60px;
+  transform: skew(21deg) rotate(12deg);
+}
+
+/* Styles for button when input is checked */
+input:checked ~ .btn-in {
+  background: #fefcfb;
+  background: linear-gradient(to right, #f8fafb 30%, #f8fafb 70%);
+  box-shadow: inset 2px 0px 8px rgba(0, 0, 0, 0.2),
+    inset -2px 1px 1px rgba(255, 255, 255, 0.5);
+  border-left: 1px solid #919191;
+  border-top: 1px solid #919191;
+  border-bottom: 1px solid #919191;
+  border-right: 1px solid #b4b4b4;
+}
+
+/* Styles for input */
+input {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 130px;
+  height: 55px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Styles for span element */
+span {
+  position: absolute;
+  top: 17px;
+  transition: all 0.2s linear;
+}
+
+/* Styles for "on" text */
+.on {
+  left: 25px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #aaa;
+}
+
+/* Styles for "off" text */
+.off {
+  right: 25px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #6f00f6;
+}
+
+/* Styles for "on" text when input is checked */
+input:checked ~ .btn-in .on {
+  color: #6f00f6;
+  transition: all 0.2s linear;
+}
+
+/* Styles for "off" text when input is checked */
+input:checked ~ .btn-in .off {
+  color: #aaa;
+  transition: all 0.2s linear;
+}
